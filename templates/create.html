@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block 'main' %}
+{% load static %}
+<div class="row">
+  <h4>Create Employee</h4>
+    <form method="POST" action="/create" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row g-3 align-items-center">
+            <div class="col-sm-6">
+            <div class="col-auto">
+              <label for="inputfname" class="col-form-label">Enter Name:</label>
+            </div>
+            <div class="col-auto">
+              <input name="uname" type="text" id="inputfname" class="form-control" >
+            </div>
+
+            <div class="col-auto">
+                <label for="inputlname" class="col-form-label">Enter Email:</label>
+              </div>
+              <div class="col-auto">
+                <input name="email" type="email" id="inputlname" class="form-control" >
+              </div>
+              
+              <div class="col-auto">
+                <label for="inputage" class="col-form-label">Enter Age: </label>
+              </div>
+              <div class="col-auto">
+                <input name="uage" type="number" id="inputage" class="form-control" >
+              </div>
+
+              <div class="col-auto">
+                <label for="inputage" class="col-form-label">Enter Gender: </label>
+              </div>
+              <div class="col-auto">
+                <input name="gender" type="radio" value="Female">Female
+                <input name="gender" type="radio" value="Male">Male
+              </div>
+
+              <div class="col-auto">
+                <label for="inputfname" class="col-form-label">Enter Address:</label>
+              </div>
+              <div class="col-auto">
+                <textarea name="address" type="text" class="form-control" placeholder="Your Address" cols="21" rows="5"></textarea>
+              </div>
+              <br>
+              <div class="col-auto">
+                <button type="submit" value="submit" class="btn btn-primary mb-3">Confirm identity</button>
+              </div>
+            </div>
+        </div>
+
+        
+    </form>
+</div>
+
+{% endblock 'main' %}
